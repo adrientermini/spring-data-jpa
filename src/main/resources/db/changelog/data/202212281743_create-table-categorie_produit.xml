@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+    <changeSet author="adrientermini" id="202212281743">
+        <createTable tableName="categorie_produit">
+            <column name="categorie_id" type="java.lang.Long">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="produit_id" type="java.lang.Long">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="categorie_id" baseTableName="categorie_produit"
+                                 constraintName="categorie_produit_fk_categorie_id" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="categorie_id"
+                                 referencedTableName="categorie" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="produit_id" baseTableName="categorie_produit"
+                                 constraintName="categorie_produit_fk_produit_id" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="produit_id"
+                                 referencedTableName="produit" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

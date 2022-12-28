@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+    <changeSet author="adrientermini" id="202212281730">
+        <createTable tableName="categorie">
+            <column name="categorie_id" type="java.lang.Long" defaultValueSequenceNext="categorie_id_seq">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="categoriePK"/>
+            </column>
+            <column name="nom" type="varchar(255)" defaultValue="null"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

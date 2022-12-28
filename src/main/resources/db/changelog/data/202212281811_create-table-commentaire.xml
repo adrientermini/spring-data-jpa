@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+    <changeSet author="adrientermini" id="202212281811">
+        <createTable tableName="commentaire">
+            <column name="commentaire_id" type="java.lang.Long" defaultValueSequenceNext="commentaire_id_seq">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="commentairePK"/>
+            </column>
+            <column name="contenu" type="text" defaultValue="null"/>
+            <column name="produit_id" type="java.lang.Long">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="produit_id" baseTableName="commentaire"
+                                 constraintName="commentaire_fk_produit_id" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="produit_id"
+                                 referencedTableName="produit" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

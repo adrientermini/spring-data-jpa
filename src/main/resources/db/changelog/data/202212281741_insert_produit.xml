@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+    <changeSet author="adrientermini" id="202212281741">
+        <insert tableName="produit">
+            <column name="produit_id" valueSequenceNext="produit_id_seq"></column>
+            <column name="nom" value="AssuranceAuTiersSimple"></column>
+            <column name="description"
+                    value="Assurance couvrant uniquement les dégats matériels et corporels que vous êtes susceptible de causer à autrui avec votre véhicule."></column>
+            <column name="cout" value="500"></column>
+        </insert>
+        <insert tableName="produit">
+            <column name="produit_id" valueSequenceNext="produit_id_seq"></column>
+            <column name="nom" value="AssuranceAuTiersEtendue"></column>
+            <column name="description"
+                    value="Assurance couvrant le minimum de la garantie responsabilité civile et le bris de glace, le vol, l'attentat, les catastrophes naturelles et technologiques."></column>
+            <column name="cout" value="800"></column>
+        </insert>
+        <insert tableName="produit">
+            <column name="produit_id" valueSequenceNext="produit_id_seq"></column>
+            <column name="nom" value="AssuranceTousRisques"></column>
+            <column name="description"
+                    value="Assurance qui reprend les garanties de l'assurance au tiers étendue et auxquelles on ajoute la garantie dommage tous accidents (responsable ou non)."></column>
+            <column name="cout" value="1500"></column>
+        </insert>
+        <insert tableName="produit">
+            <column name="produit_id" valueSequenceNext="produit_id_seq"></column>
+            <column name="nom" value="AssuranceTousRisquesJeunes"></column>
+            <column name="description"
+                    value="L'assurance tous risques pour les jeunes conducteurs (- 2 ans de permis de conduire)."></column>
+            <column name="cout" value="2200"></column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

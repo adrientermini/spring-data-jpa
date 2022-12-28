@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+    <changeSet author="adrientermini" id="202212281815">
+        <insert tableName="commentaire">
+            <column name="commentaire_id" valueSequenceNext="commentaire_id_seq"></column>
+            <column name="contenu" value="Assurance avec un bon rapport qualité prix"></column>
+            <column name="produit_id"
+                    valueComputed="(select produit_id from produit where nom = 'AssuranceAuTiersEtendue')"/>
+        </insert>
+        <insert tableName="commentaire">
+            <column name="commentaire_id" valueSequenceNext="commentaire_id_seq"></column>
+            <column name="contenu" value="Minimum du minimum, un peu deçu"></column>
+            <column name="produit_id"
+                    valueComputed="(select produit_id from produit where nom = 'AssuranceAuTiersSimple')"/>
+        </insert>
+        <insert tableName="commentaire">
+            <column name="commentaire_id" valueSequenceNext="commentaire_id_seq"></column>
+            <column name="contenu" value="Ce qu'on peut attendre d'une assurance au tiers, ni plus, ni moins"></column>
+            <column name="produit_id"
+                    valueComputed="(select produit_id from produit where nom = 'AssuranceAuTiersSimple')"/>
+        </insert>
+        <insert tableName="commentaire">
+            <column name="commentaire_id" valueSequenceNext="commentaire_id_seq"></column>
+            <column name="contenu"
+                    value="Excellente assurance tous risques ! Prix compétitif vis à vis des autres assureurs"></column>
+            <column name="produit_id"
+                    valueComputed="(select produit_id from produit where nom = 'AssuranceTousRisques')"/>
+        </insert>
+        <insert tableName="commentaire">
+            <column name="commentaire_id" valueSequenceNext="commentaire_id_seq"></column>
+            <column name="contenu"
+                    value="L'assurance est bien, mais les délais de traitement ne me conviennent pas, trop d'attente!"></column>
+            <column name="produit_id"
+                    valueComputed="(select produit_id from produit where nom = 'AssuranceTousRisques')"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

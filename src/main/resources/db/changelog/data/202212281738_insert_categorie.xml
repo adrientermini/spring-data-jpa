@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+    <changeSet author="adrientermini" id="202212281738">
+        <insert tableName="categorie">
+            <column name="categorie_id" valueSequenceNext="categorie_id_seq"></column>
+            <column name="nom" value="Standard"></column>
+        </insert>
+        <insert tableName="categorie">
+            <column name="categorie_id" valueSequenceNext="categorie_id_seq"></column>
+            <column name="nom" value="Special"></column>
+        </insert>
+        <insert tableName="categorie">
+            <column name="categorie_id" valueSequenceNext="categorie_id_seq"></column>
+            <column name="nom" value="JeunesConducteurs"></column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
